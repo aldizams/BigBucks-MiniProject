@@ -85,7 +85,7 @@
 				<div class="card-body bg-dark" style="color: #ffff;">
 				  <h5 class="card-title">Aldiza</h5>
 				  <p class="card-text">Account Number : 928734123498</p>
-				  <a href="./about.html" class="btn btn-danger">Log Out!</a>
+				  <a href="./about.html" class="btn btn-danger" id="logout">Log Out!</a>
 				</div>
 			  </div>
 
@@ -111,7 +111,7 @@
 							  <p class="card-text"><b>Nama :</b> Aldiza Muhammad S</p>
 							  <p class="card-text"><b>No.Rek :</b> 12344545143</p>
 							  <p class="card-text"><b>Saldo :</b> Rp. 1.500.000,00</p>
-							  <a href="#" class="btn btn-primary" data-bs-target="#MM" data-bs-toggle="modal">Transfer</a>
+							  <a href="#" class="btn btn-primary" data-bs-target="#MM" data-bs-toggle="modal" >Transfer</a>
 							</div>
 						  </div>
 						  <div class="card" style="width: 18rem;">
@@ -124,7 +124,7 @@
 							  <p class="card-text"><b>Nama :</b> Aldiza Muhammad S</p>
 							  <p class="card-text"><b>No.Rek :</b> 12344545143</p>
 							  <p class="card-text"><b>Saldo :</b> Rp. 1.500.000,00</p>
-							  <a href="#" class="btn btn-primary" data-bs-target="#MM" data-bs-toggle="modal">Transfer</a>
+							  <a href="#" class="btn btn-primary" data-bs-target="#MM" data-bs-toggle="modal" >Transfer</a>
 							</div>
 						  </div>
 						  <div class="card" style="width: 18rem;">
@@ -137,7 +137,7 @@
 							  <p class="card-text"><b>Nama :</b> Aldiza Muhammad S</p>
 							  <p class="card-text"><b>No.Rek :</b> 12344545143</p>
 							  <p class="card-text"><b>Saldo :</b> Rp. 1.500.000,00</p>
-							  <a href="#" class="btn btn-primary" data-bs-target="#MM" data-bs-toggle="modal">Transfer</a>
+							  <a href="#" class="btn btn-primary" data-bs-target="#MM" data-bs-toggle="modal" >Transfer</a>
 							</div>
 						  </div>
 						  <div class="card" style="width: 18rem;">
@@ -150,7 +150,7 @@
 							  <p class="card-text"><b>Nama :</b> Aldiza Muhammad S</p>
 							  <p class="card-text"><b>No.Rek :</b> 12344545143</p>
 							  <p class="card-text"><b>Saldo :</b> Rp. 1.500.000,00</p>
-							  <a href="#" class="btn btn-primary" data-bs-target="#MM" data-bs-toggle="modal">Transfer</a>
+							  <a href="#" class="btn btn-primary" data-bs-target="#MM" data-bs-toggle="modal" >Transfer</a>
 							</div>
 						  </div>
 						  <div class="card" style="width: 18rem; margin: 15px;">
@@ -163,7 +163,7 @@
 							  <p class="card-text"><b>Nama :</b> Aldiza Muhammad S</p>
 							  <p class="card-text"><b>No.Rek :</b> 12344545143</p>
 							  <p class="card-text"><b>Saldo :</b> Rp. 1.500.000,00</p>
-							  <a href="#" class="btn btn-primary" data-bs-target="#MM" data-bs-toggle="modal">Transfer</a>
+							  <a href="#" class="btn btn-primary" data-bs-target="#MM" data-bs-toggle="modal" >Transfer</a>
 							</div>
 						  </div>
 						  <div class="card" style="width: 18rem; margin: 15px;">
@@ -202,7 +202,7 @@
 							  <p class="card-text"><b>No.												 :</b> 08118145090</p>
 							  <p class="card-text"><b>Saldo :</b> Rp.100.000,00</p>
 							  <div style="display: flex; justify-content:space-evenly; align-items: center; margin-top: 20px;">
-								<a href="#" class="btn btn-primary" data-bs-target="#ShpMQ" data-bs-toggle="modal" style="position: relative;">QR CODE<span class="position-absolute top-0 start-80 translate-middle badge rounded-pill bg-danger">
+								<a href="#" class="btn btn-primary" id="QR" data-bs-target="#ShpMQ" data-bs-toggle="modal" style="position: relative;">QR CODE<span class="position-absolute top-0 start-80 translate-middle badge rounded-pill bg-danger" id="block">
 									Blocked
 									<span class="visually-hidden">unread messages</span>
 								  </span></a>
@@ -222,7 +222,7 @@
 							  <p class="card-text"><b>No. :</b> 08118135090</p>
 							  <p class="card-text"><b>Saldo :</b> Rp.100.000,00</p>
 							  <div style="display: flex; justify-content:space-evenly; align-items: center; margin-top: 20px;">
-								<a href="#" class="btn btn-primary" data-bs-target="#GpyMQ" data-bs-toggle="modal" style="position: relative;">QR CODE<span class="position-absolute top-0 start-80 translate-middle badge rounded-pill bg-danger">
+								<a href="#" class="btn btn-primary" data-bs-target="#GpyMQ" data-bs-toggle="modal" style="position: relative;" id="QR">QR CODE<span class="position-absolute top-0 start-80 translate-middle badge rounded-pill bg-danger" id="block">
 									Blocked
 									<span class="visually-hidden">unread messages</span>
 								  </span></a>
@@ -350,7 +350,7 @@
 			</div>
 			<div class="modal-footer bg-dark">
 			  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-			  <button type="button" class="btn btn-primary"data-bs-dismiss="modal">Transfer</button>
+			  <button type="button" class="btn btn-primary"data-bs-dismiss="modal" id="tf">Transfer</button>
 			</div>
 		  </div>
 		</div>
@@ -397,20 +397,26 @@
 	  </div>
 		</div>
 		<script>
-		var alertPlaceholder = document.getElementById('liveAlertPlaceholder')
-		var alertTrigger = document.getElementById('liveAlertBtn')
+		let alertPlaceholder = document.getElementById('liveAlertPlaceholder');
+		let alertTrigger = document.getElementById('liveAlertBtn');
+		function muncul() {
+		let wrapper = document.createElement('div');
+		wrapper.innerHTML = '<div class="alert alert-success alert-dismissible" role="alert" style=" margin-top:13px">Your Feedback Has Been Sent!<button type="button" class="btn-close" data-bs-dismiss="alert " aria-label="Close" ></button></div>';
 
-		function alert() {
-		var wrapper = document.createElement('div')
-		wrapper.innerHTML = '<div class="alert alert-success alert-dismissible" role="alert" style=" margin-top:13px">Your Feedback Has Been Sent!<button type="button" class="btn-close" data-bs-dismiss="alert " aria-label="Close" ></button></div>'
-
-		alertPlaceholder.append(wrapper)
+		alertPlaceholder.append(wrapper);
 		}
 
 		if (alertTrigger) {
 		alertTrigger.addEventListener('click', function () {
-			alert()
+			muncul();
 		})
+		}
+
+		document.getElementById('tf').onclick = () => {
+				alert('Berhasil');
+			};
+		document.getElementById('QR').onclick = () => {
+			alert('Nomor anda diblock, silahkan hubungi customer service!')
 		}
 		</script>
 	</body>
